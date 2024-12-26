@@ -10,7 +10,7 @@ app.use("/api/v1/admin",adminRouter);
 app.use("/api/v1/course",courseRouter);
 async function main()
 {
-    await mongoose.connect("mongodb+srv://admin:Karakoti8@cluster0.ak3sf.mongodb.net/Couse-Selling-App");
+    await mongoose.connect("");
     app.listen(3000);
     console.log("Listening at port 3000");
 }
