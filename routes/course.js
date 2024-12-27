@@ -1,6 +1,6 @@
 const {Router}=require("express");
 const {userMiddleware}=require("../middleware/user");
-const { purchaseModel } = require("../db");
+const { purchaseModel , courseModel} = require("../db");
 const courseRouter=Router();
 courseRouter.get("/preview",async function(req,res)
 {
@@ -13,7 +13,7 @@ courseRouter.post("/purchase",userMiddleware,async function(req,res)
 {
     //Demo endpoint only
     const userId=req.userId;
-    const courseId=req.query.courseId;
+    const courseId=req.body.courseId;
     await purchaseModel.create({
         userId:userId,
         courseId:courseId
