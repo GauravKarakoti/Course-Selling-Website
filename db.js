@@ -1,5 +1,6 @@
+require('dotenv').config();
 const mongoose=require('mongoose');
-mongoose.connect("mongodb+srv://admin:Karakoti8@cluster0.ak3sf.mongodb.net/Couse-Selling-App");
+mongoose.connect(process.env.MONGO_URL);
 console.log("Connected to MongoDB");
 const Schema=mongoose.Schema;
 const ObjectId=mongoose.Types.ObjectId;
